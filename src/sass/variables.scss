@@ -1,5 +1,10 @@
 :root {
   /* Colors */
+  --color-white: #fff;
 
   /* Base */
+  --font-family-primary: 'Inter';
+  --font-family-secondary: 'Overpass';
+  --line-height-base: 1.5;
+  --color-base: var(--color-white);
 }
