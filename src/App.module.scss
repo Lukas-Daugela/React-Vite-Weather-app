@@ -1,0 +1,17 @@
+@import './sass/mixins/index';
+
+.container {
+  align-items: center;
+  background: var(--color-white-300);
+  border: 1px solid var(--color-white-250);
+  border-radius: 11px;
+  display: flex;
+  margin: 0 auto;
+  max-width: 40rem;
+  min-width: 26.6rem;
+
+  @include media-query('md') {
+    max-width: 51.2rem;
+    padding-right: 1rem;
+  }
+}
