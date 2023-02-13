@@ -1,8 +1,9 @@
 :root {
   /* Colors */
   --color-white: #fff;
-  --color-white-200: #ffffff29;
-  --color-white-300: #ffffff33;
+  --color-white-200: rgba(255, 255, 255, 0.161);
+  --color-white-250: hsla(0, 0%, 100%, 0.18);
+  --color-white-300: rgba(255, 255, 255, 0.2);
 
   --color-purple-to-blue: linear-gradient(40deg, #48355b 0%, #91bef3 100%);
   --color-fading-white: linear-gradient(

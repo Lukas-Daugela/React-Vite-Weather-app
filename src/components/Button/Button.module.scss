@@ -1,0 +1,33 @@
+@import '../../sass/mixins/index';
+
+.button {
+  @include flex-center;
+
+  border: unset;
+  border-radius: 11px;
+  height: 4.5rem;
+  width: 4.5rem;
+
+  &__search {
+    background: var(--color-fading-white);
+
+    @include media-query('md') {
+      border-radius: 20px;
+      height: 5.8rem;
+      width: 5.9rem;
+    }
+  }
+
+  &__degree {
+    background: var(--color-white-250);
+    font-size: 2.4rem;
+    font-weight: 300;
+
+    @include media-query('md') {
+      border-radius: 100px;
+      font-weight: 400;
+      height: 4rem;
+      width: 6rem;
+    }
+  }
+}
