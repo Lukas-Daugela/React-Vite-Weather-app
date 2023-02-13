@@ -1,0 +1,39 @@
+$body-sizes: (
+  'extraLarge': (
+    'sm': 2rem,
+    'lg': 3.4rem,
+  ),
+  'large': (
+    'sm': 2.4rem,
+    'md': 2.8rem,
+    'lg': 3.4rem,
+  ),
+  'medium': (
+    'sm': 1.6rem,
+    'md': 2rem,
+    'lg': 2.4rem,
+  ),
+  'small': (
+    'sm': 1.4rem,
+    'md': 1.8rem,
+    'lg': 2.2rem,
+  ),
+);
+
+@mixin map-sizes($text-sizes, $type) {
+  @each $name, $sizes in $text-sizes {
+    @if ($name == $type) {
+      font-size: map-get($sizes, 'sm');
+      @each $key, $size in $sizes {
+        @include media-query($key) {
+          font-size: $size;
+        }
+      }
+    }
+  }
+}
+
+@mixin body-styles($type, $weight: 300) {
+  font-weight: $weight;
+  @include map-sizes($body-sizes, $type);
+}
