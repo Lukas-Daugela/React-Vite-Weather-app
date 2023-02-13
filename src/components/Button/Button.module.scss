@@ -1,10 +1,11 @@
 @import '../../sass/mixins/index';
 
 .button {
+  @include flex-center;
+
   border: unset;
   border-radius: 11px;
   height: 4.5rem;
-  text-align: center;
   width: 4.5rem;
 
   &__search {
