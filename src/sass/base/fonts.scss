@@ -1,1 +1,23 @@
-// file for font-face's
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100;
+  src: url('../fonts/Inter/inter-latin-ext-100.woff') format('woff'),
+    url('../fonts/Inter/inter-latin-ext-100.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/Inter/inter-latin-ext-300.woff') format('woff'),
+    url('../fonts/Inter/inter-latin-ext-300.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Overpass';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/Overpass/overpass-latin-ext-regular.woff') format('woff'),
+    url('../fonts/Overpass/overpass-v12-latin-ext-regular.woff2') format('woff2');
+}
