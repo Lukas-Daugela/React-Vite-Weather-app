@@ -1,12 +1,17 @@
 @import './sass/mixins/index';
 
 .main {
-  flex-direction: column;
-  height: 100vh;
-  margin: auto;
-  max-width: 68.6rem;
+  padding: 0 10%;
 
-  @include flex-center;
+  @include media-query('md') {
+    @include flex-center;
+
+    flex-direction: column;
+    height: 100vh;
+    margin: auto;
+    max-width: 64.7rem;
+    padding: unset;
+  }
 }
 
 .search-bar {
@@ -41,10 +46,21 @@
 .condition__wrapper {
   display: flex;
   flex-direction: column;
+  padding: 2rem 0;
 
   @include media-query('md') {
     flex-direction: row;
     gap: 3rem;
-    justify-content: center;
+    padding: 4rem 0;
+  }
+}
+
+.day-night-cycles {
+  // margin: 0 auto;
+
+  @include media-query('md') {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
   }
 }

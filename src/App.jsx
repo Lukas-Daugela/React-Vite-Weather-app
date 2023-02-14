@@ -2,7 +2,14 @@ import classNames from 'classnames/bind';
 import React from 'react';
 
 import styles from './App.module.scss';
-import { HumidityIcon, SearchIcon, ThermometerIcon, WindIcon } from './assets/svg';
+import {
+  HumidityIcon,
+  SearchIcon,
+  SunriseIcon,
+  SunsetIcon,
+  ThermometerIcon,
+  WindIcon,
+} from './assets/svg';
 import Button from './components/Button';
 import Input from './components/Input';
 import WeatherCondition from './components/WeatherCondition/WeatherCondition';
@@ -27,6 +34,14 @@ function App() {
         </WeatherCondition>
         <WeatherCondition weatherData="10km/h" name={'Wind'}>
           <WindIcon className={cn('weather__illustration')} />
+        </WeatherCondition>
+      </div>
+      <div className={cn('day-night-cycles')}>
+        <WeatherCondition weatherData="4.45am" name={'Sunrise'}>
+          <SunriseIcon className={cn('weather__illustration')} />
+        </WeatherCondition>
+        <WeatherCondition weatherData="8.50pm" name={'Sunset'}>
+          <SunsetIcon className={cn('weather__illustration')} />
         </WeatherCondition>
       </div>
     </main>
