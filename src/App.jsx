@@ -5,6 +5,7 @@ import styles from './App.module.scss';
 import { SearchIcon } from './assets/svg';
 import Button from './components/Button';
 import Input from './components/Input';
+import WeeklyCard from './components/WeeklyCard/WeeklyCard';
 
 const cn = classNames.bind(styles);
 
@@ -18,6 +19,7 @@ function App() {
           <SearchIcon />
         </Button>
       </div>
+      <WeeklyCard />
     </>
   );
 }
