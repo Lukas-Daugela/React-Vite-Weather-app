@@ -1,7 +1,7 @@
 @import './sass/mixins/index';
 
 .main {
-  padding: 0 10%;
+  padding: 5rem 10% 0;
 
   @include media-query('md') {
     @include flex-center;
@@ -43,6 +43,16 @@
   }
 }
 
+.conditions {
+  @include media-query('sm') {
+    display: flex;
+    justify-content: space-around;
+  }
+  @include media-query('md') {
+    display: block;
+  }
+}
+
 .condition__wrapper {
   display: flex;
   flex-direction: column;
@@ -56,8 +66,13 @@
 }
 
 .day-night-cycles {
-  @include media-query('md') {
+  @include media-query('sm') {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  @include media-query('md') {
+    flex-direction: row;
     justify-content: space-evenly;
     width: 100%;
   }
@@ -69,11 +84,20 @@
 
   @include media-query('sm') {
     flex-direction: row;
+    justify-content: space-evenly;
+  }
+  @include media-query('md') {
+    flex-direction: row;
+    justify-content: unset;
   }
 }
 
 .current-weather {
-  text-align: center;
+  text-align: start;
+
+  @include media-query('md') {
+    text-align: center;
+  }
 
   &__temperature {
     display: flex;

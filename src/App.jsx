@@ -46,24 +46,26 @@ function App() {
           </div>
         </div>
       </div>
-      <div className={cn('condition__wrapper')}>
-        <WeatherCondition className="separate" weatherData="27°C" name={'Feels like'}>
-          <ThermometerIcon className={cn('weather__illustration')} />
-        </WeatherCondition>
-        <WeatherCondition className="separate" weatherData="54%" name={'Hum'}>
-          <HumidityIcon className={cn('weather__illustration')} />
-        </WeatherCondition>
-        <WeatherCondition weatherData="10km/h" name={'Wind'}>
-          <WindIcon className={cn('weather__illustration')} />
-        </WeatherCondition>
-      </div>
-      <div className={cn('day-night-cycles')}>
-        <WeatherCondition weatherData="4.45am" name={'Sunrise'}>
-          <SunriseIcon className={cn('weather__illustration')} />
-        </WeatherCondition>
-        <WeatherCondition weatherData="8.50pm" name={'Sunset'}>
-          <SunsetIcon className={cn('weather__illustration')} />
-        </WeatherCondition>
+      <div className={cn('conditions')}>
+        <div className={cn('condition__wrapper')}>
+          <WeatherCondition className="separate" weatherData="27°C" name={'Feels like'}>
+            <ThermometerIcon className={cn('weather__illustration')} />
+          </WeatherCondition>
+          <WeatherCondition className="separate" weatherData="54%" name={'Hum'}>
+            <HumidityIcon className={cn('weather__illustration')} />
+          </WeatherCondition>
+          <WeatherCondition weatherData="10km/h" name={'Wind'}>
+            <WindIcon className={cn('weather__illustration')} />
+          </WeatherCondition>
+        </div>
+        <div className={cn('day-night-cycles')}>
+          <WeatherCondition weatherData="4.45am" name={'Sunrise'}>
+            <SunriseIcon className={cn('weather__illustration')} />
+          </WeatherCondition>
+          <WeatherCondition weatherData="8.50pm" name={'Sunset'}>
+            <SunsetIcon className={cn('weather__illustration')} />
+          </WeatherCondition>
+        </div>
       </div>
       <div className={cn('weekly-cards')}>
         <WeeklyCard />
