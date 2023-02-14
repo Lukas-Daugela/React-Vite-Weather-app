@@ -14,7 +14,8 @@ import {
 } from './assets/svg';
 import Button from './components/Button';
 import Input from './components/Input';
-import WeatherCondition from './components/WeatherCondition/WeatherCondition';
+import WeatherCondition from './components/WeatherCondition';
+import WeeklyCard from './components/WeeklyCard';
 
 const cn = classNames.bind(styles);
 
@@ -41,7 +42,7 @@ function App() {
           </div>
           <div className={cn('location-time__time')}>
             <p className={cn('location-time__date')}>Thursday 17th Jun</p>
-            <p>2:45 pm</p>
+            <p className={cn('location-time__hours')}>2:45 pm</p>
           </div>
         </div>
       </div>
@@ -63,6 +64,12 @@ function App() {
         <WeatherCondition weatherData="8.50pm" name={'Sunset'}>
           <SunsetIcon className={cn('weather__illustration')} />
         </WeatherCondition>
+      </div>
+      <div className={cn('weekly-cards')}>
+        <WeeklyCard />
+        <WeeklyCard />
+        <WeeklyCard />
+        <WeeklyCard />
       </div>
     </main>
   );
