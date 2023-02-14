@@ -5,6 +5,7 @@ import SunsetIcon from './SunsetIcon';
 import ThermometerIcon from './ThermometerIcon';
 import WindIcon from './WindIcon';
 import CloudyNight from './CloudyNight';
+import LocationIcon from './LocationIcon';
 
 export {
   CloudyNight,
@@ -13,5 +14,6 @@ export {
   SunriseIcon,
   SunsetIcon,
   HumidityIcon,
+  LocationIcon,
   ThermometerIcon,
 };

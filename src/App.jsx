@@ -5,6 +5,7 @@ import styles from './App.module.scss';
 import {
   CloudyNight,
   HumidityIcon,
+  LocationIcon,
   SearchIcon,
   SunriseIcon,
   SunsetIcon,
@@ -26,7 +27,24 @@ function App() {
           <SearchIcon />
         </Button>
       </div>
-      <CloudyNight />
+      <div className={cn('main-info__wrapper')}>
+        <div className={cn('current-weather')}>
+          <CloudyNight />
+          <p className={cn('current-weather__temperature')}>
+            15<span className={cn('current-weather__degree')}>°C</span>
+          </p>
+        </div>
+        <div className={cn('location-time')}>
+          <div className={cn('location-time__location')}>
+            <LocationIcon />
+            <p className={cn('location-time__city')}>London, GB</p>
+          </div>
+          <div className={cn('location-time__time')}>
+            <p className={cn('location-time__date')}>Thursday 17th Jun</p>
+            <p>2:45 pm</p>
+          </div>
+        </div>
+      </div>
       <div className={cn('condition__wrapper')}>
         <WeatherCondition className="separate" weatherData="27°C" name={'Feels like'}>
           <ThermometerIcon className={cn('weather__illustration')} />
