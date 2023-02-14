@@ -1,8 +1,10 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
-export default function ThermometerIcon() {
+export default function ThermometerIcon({ className }) {
   return (
     <svg
+      className={className}
       width="4"
       height="13"
       viewBox="0 0 4 13"
@@ -16,3 +18,7 @@ export default function ThermometerIcon() {
     </svg>
   );
 }
+
+ThermometerIcon.propTypes = {
+  className: PropTypes.string,
+};

@@ -1,8 +1,10 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
-export default function SunsetIcon() {
+export default function SunsetIcon({ className }) {
   return (
     <svg
+      className={className}
       width="42"
       height="28"
       viewBox="0 0 42 28"
@@ -31,3 +33,7 @@ export default function SunsetIcon() {
     </svg>
   );
 }
+
+SunsetIcon.propTypes = {
+  className: PropTypes.string,
+};

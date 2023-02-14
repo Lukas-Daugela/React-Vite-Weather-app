@@ -1,8 +1,10 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
-export default function SearchIcon() {
+export default function SearchIcon({ className }) {
   return (
     <svg
+      className={className}
       width="25"
       height="26"
       viewBox="0 0 25 26"
@@ -16,3 +18,7 @@ export default function SearchIcon() {
     </svg>
   );
 }
+
+SearchIcon.propTypes = {
+  className: PropTypes.string,
+};

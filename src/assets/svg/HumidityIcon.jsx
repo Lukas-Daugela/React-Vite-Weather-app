@@ -1,8 +1,10 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
-export default function HumidityIcon() {
+export default function HumidityIcon({ className }) {
   return (
     <svg
+      className={className}
       width="14"
       height="15"
       viewBox="0 0 14 15"
@@ -71,3 +73,7 @@ export default function HumidityIcon() {
     </svg>
   );
 }
+
+HumidityIcon.propTypes = {
+  className: PropTypes.string,
+};
