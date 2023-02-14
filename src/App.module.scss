@@ -1,6 +1,15 @@
 @import './sass/mixins/index';
 
-.container {
+.main {
+  flex-direction: column;
+  height: 100vh;
+  margin: auto;
+  max-width: 68.6rem;
+
+  @include flex-center;
+}
+
+.search-bar {
   align-items: center;
   background: var(--color-white-300);
   border: 1px solid var(--color-white-250);
@@ -13,5 +22,29 @@
   @include media-query('md') {
     max-width: 51.2rem;
     padding-right: 1rem;
+  }
+}
+
+.weather__illustration {
+  display: block;
+  height: 1.8rem;
+  width: 2rem;
+  @include media-query('md') {
+    height: 2.2rem;
+    width: 2.2rem;
+  }
+  @include media-query('lg') {
+    width: 3rem;
+  }
+}
+
+.condition__wrapper {
+  display: flex;
+  flex-direction: column;
+
+  @include media-query('md') {
+    flex-direction: row;
+    gap: 3rem;
+    justify-content: center;
   }
 }

@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 import React from 'react';
 
 import styles from './App.module.scss';
-import { SearchIcon, ThermometerIcon } from './assets/svg';
+import { HumidityIcon, SearchIcon, ThermometerIcon, WindIcon } from './assets/svg';
 import Button from './components/Button';
 import Input from './components/Input';
 import WeatherCondition from './components/WeatherCondition/WeatherCondition';
@@ -11,18 +11,25 @@ const cn = classNames.bind(styles);
 
 function App() {
   return (
-    <>
-      <div>App</div>
-      <div className={cn('container')}>
+    <main className={cn('main')}>
+      <div className={cn('search-bar')}>
         <Input placeholder={'Enter your city'} />
         <Button type="search">
           <SearchIcon />
         </Button>
       </div>
-      <WeatherCondition weatherData="27°C" text={'Feels like'}>
-        <ThermometerIcon />
-      </WeatherCondition>
-    </>
+      <div className={cn('condition__wrapper')}>
+        <WeatherCondition className="separate" weatherData="27°C" name={'Feels like'}>
+          <ThermometerIcon className={cn('weather__illustration')} />
+        </WeatherCondition>
+        <WeatherCondition className="separate" weatherData="54%" name={'Hum'}>
+          <HumidityIcon className={cn('weather__illustration')} />
+        </WeatherCondition>
+        <WeatherCondition weatherData="10km/h" name={'Wind'}>
+          <WindIcon className={cn('weather__illustration')} />
+        </WeatherCondition>
+      </div>
+    </main>
   );
 }
 
