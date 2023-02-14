@@ -1,0 +1,21 @@
+@import '../../sass/mixins/index';
+
+.test {
+  width: 18rem;
+}
+
+.condition {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 10% 60% 30%;
+
+  &__description {
+    @include body-styles('small');
+
+    margin: 0;
+  }
+
+  &__illustration {
+    margin: 0 auto;
+  }
+}

@@ -26,8 +26,8 @@ export default function SunriseIcon() {
           fill="#FFA011"
         />
       </g>
-      <path d="M2.09961 24.3557H39.8996" stroke="#FFA011" stroke-linecap="round" />
-      <path d="M9.09961 27H32.8996" stroke="#FFA011" stroke-linecap="round" />
+      <path d="M2.09961 24.3557H39.8996" stroke="#FFA011" strokeLinecap="round" />
+      <path d="M9.09961 27H32.8996" stroke="#FFA011" strokeLinecap="round" />
     </svg>
   );
 }

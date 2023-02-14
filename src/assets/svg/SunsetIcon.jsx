@@ -26,8 +26,8 @@ export default function SunsetIcon() {
           fill="#FFD646"
         />
       </g>
-      <path d="M2.09961 24.3557H39.8996" stroke="#FFD646" stroke-linecap="round" />
-      <path d="M9.09961 27H32.8996" stroke="#FFD646" stroke-linecap="round" />
+      <path d="M2.09961 24.3557H39.8996" stroke="#FFD646" strokeLinecap="round" />
+      <path d="M9.09961 27H32.8996" stroke="#FFD646" strokeLinecap="round" />
     </svg>
   );
 }
