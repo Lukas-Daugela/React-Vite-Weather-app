@@ -4,5 +4,14 @@ import HumidityIcon from './HumidityIcon';
 import SunsetIcon from './SunsetIcon';
 import ThermometerIcon from './ThermometerIcon';
 import WindIcon from './WindIcon';
+import CloudyNight from './CloudyNight';
 
-export { SearchIcon, WindIcon, SunriseIcon, SunsetIcon, HumidityIcon, ThermometerIcon };
+export {
+  CloudyNight,
+  SearchIcon,
+  WindIcon,
+  SunriseIcon,
+  SunsetIcon,
+  HumidityIcon,
+  ThermometerIcon,
+};

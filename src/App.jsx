@@ -3,6 +3,7 @@ import React from 'react';
 
 import styles from './App.module.scss';
 import {
+  CloudyNight,
   HumidityIcon,
   SearchIcon,
   SunriseIcon,
@@ -25,6 +26,7 @@ function App() {
           <SearchIcon />
         </Button>
       </div>
+      <CloudyNight />
       <div className={cn('condition__wrapper')}>
         <WeatherCondition className="separate" weatherData="27°C" name={'Feels like'}>
           <ThermometerIcon className={cn('weather__illustration')} />
