@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import styles from './App.module.scss';
 import {
@@ -16,10 +16,24 @@ import Button from './components/Button';
 import Input from './components/Input';
 import WeatherCondition from './components/WeatherCondition';
 import WeeklyCard from './components/WeeklyCard';
+import getFormattedWeatherData from './services/weatherService';
 
 const cn = classNames.bind(styles);
 
 function App() {
+  const query = { q: 'Kaunas' };
+  const units = 'metric';
+
+  useEffect(() => {
+    const fetchWeather = async () => {
+      const data = await getFormattedWeatherData({ ...query, units });
+
+      console.log(data);
+    };
+
+    fetchWeather();
+  }, []);
+
   return (
     <main className={cn('main')}>
       <div className={cn('search-bar')}>
