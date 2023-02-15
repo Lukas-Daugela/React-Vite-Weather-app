@@ -3,9 +3,7 @@ import React, { useEffect } from 'react';
 
 import styles from './App.module.scss';
 import {
-  CloudyNight,
   HumidityIcon,
-  LocationIcon,
   SearchIcon,
   SunriseIcon,
   SunsetIcon,
@@ -13,6 +11,7 @@ import {
   WindIcon,
 } from './assets/svg';
 import Button from './components/Button';
+import DateAndTemperature from './components/DateAndTemperature/DateAndTemperature';
 import Input from './components/Input';
 import WeatherCondition from './components/WeatherCondition';
 import WeeklyCard from './components/WeeklyCard';
@@ -42,24 +41,8 @@ function App() {
           <SearchIcon />
         </Button>
       </div>
-      <div className={cn('main-info__wrapper')}>
-        <div className={cn('current-weather')}>
-          <CloudyNight />
-          <p className={cn('current-weather__temperature')}>
-            15<span className={cn('current-weather__degree')}>°C</span>
-          </p>
-        </div>
-        <div className={cn('location-time')}>
-          <div className={cn('location-time__location')}>
-            <LocationIcon />
-            <p className={cn('location-time__city')}>London, GB</p>
-          </div>
-          <div className={cn('location-time__time')}>
-            <p className={cn('location-time__date')}>Thursday 17th Jun</p>
-            <p className={cn('location-time__hours')}>2:45 pm</p>
-          </div>
-        </div>
-      </div>
+      <DateAndTemperature />
+
       <div className={cn('conditions')}>
         <div className={cn('condition__wrapper')}>
           <WeatherCondition className="separate" weatherData="27°C" name={'Feels like'}>
