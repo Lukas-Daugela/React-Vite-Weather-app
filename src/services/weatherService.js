@@ -35,18 +35,27 @@ const filterForecastWeather = (data) => {
     city: { timezone },
     list,
   } = data;
-  const weeklyData = list.filter((dailyData) => {
-    const day = new Date(dailyData.dt_txt).getDate();
-    const hours = new Date(dailyData.dt_txt).getHours();
-    if (day > currentDate && day < currentDate + 5 && hours === 12) {
-      return dailyData;
-    }
-  });
+  const forecastData = list
+    .filter((dailyData) => {
+      const day = new Date(dailyData.dt_txt).getDate();
+      const hours = new Date(dailyData.dt_txt).getHours();
+      if (day > currentDate && day < currentDate + 5 && hours === 12) {
+        return dailyData;
+      }
+    })
+    .map((dailyData) => {
+      return {
+        date: formatToLocalTime(dailyData.dt, timezone, 'hh:mm a'),
+        title: formatToLocalTime(dailyData.dt, timezone, 'ccc'),
+        temp: dailyData.main.temp,
+        icon: dailyData.weather[0].icon,
+      };
+    });
 
-  return { timezone, weeklyData };
+  return { timezone, forecastData };
 };
 
-const formatToLocalTime = (secs, zone, format = 'ccc') =>
+const formatToLocalTime = (secs, zone, format) =>
   DateTime.fromSeconds(secs).setZone(zone).toFormat(format);
 
 const iconUrlFromCode = (code) => `http://openweathermap.org/img/wn/${code}@2x.png`;

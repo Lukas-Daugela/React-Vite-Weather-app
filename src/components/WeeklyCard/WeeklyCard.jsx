@@ -2,22 +2,23 @@ import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import Cloud from './Cloud';
+import { iconUrlFromCode } from '../../services/weatherService';
 import styles from './WeeklyCard.module.scss';
 
 const cn = classNames.bind(styles);
 
-export default function WeeklyCard({ props }) {
-  console.log(props);
+export default function WeeklyCard({ title, temp, icon }) {
   return (
     <div className={cn('card')}>
-      <p className={cn('card__info')}>Fri</p>
-      <Cloud />
-      <p className={cn('card__info')}>24°C</p>
+      <p className={cn('card__info')}>{title}</p>
+      <img src={iconUrlFromCode(icon)} alt="" />
+      <p className={cn('card__info')}>{temp}</p>
     </div>
   );
 }
 
 WeeklyCard.propTypes = {
-  props: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  title: PropTypes.string,
+  temp: PropTypes.number,
+  icon: PropTypes.node,
 };

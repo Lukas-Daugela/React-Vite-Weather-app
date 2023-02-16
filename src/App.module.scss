@@ -29,18 +29,3 @@
     padding-right: 1rem;
   }
 }
-
-.weekly-cards {
-  display: grid;
-  flex-direction: column;
-  gap: 2rem;
-  padding: 3.6rem 0;
-
-  @include media-query('sm') {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  @include media-query('md') {
-    gap: 5rem;
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
