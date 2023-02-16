@@ -74,11 +74,4 @@
       padding-bottom: 1.5rem;
     }
   }
-
-  &__date::after {
-    align-self: stretch;
-    border: 1px solid var(--color-white);
-    content: '';
-    margin-left: 1rem;
-  }
 }

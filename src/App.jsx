@@ -35,7 +35,7 @@ function App() {
           <SearchIcon />
         </Button>
       </div>
-      <DateAndTemperature />
+      {weather && <DateAndTemperature dateAndTemp={weather.dateAndTemp} />}
       <SectionWeatherConditions />
       {weather && <SectionWeeklyCards weeklyData={weather.weeklyWeather} />}
     </main>
