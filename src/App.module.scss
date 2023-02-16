@@ -2,6 +2,7 @@
 
 .main {
   padding: 5rem 10% 0;
+  position: relative;
 
   @include media-query('md') {
     @include flex-center;
@@ -18,4 +19,34 @@
   margin-top: 1.5rem;
   text-align: center;
   @include body-styles('medium');
+}
+
+.spinner__container {
+  background: #7f7f7f36;
+  display: flex;
+  height: 100vh;
+  position: absolute;
+  width: 100vw;
+}
+
+.spinner__animation {
+  animation: rotation 1s linear infinite;
+  border-radius: 50%;
+  border-right: 3px solid transparent;
+  border-top: 3px solid #fff;
+  box-sizing: border-box;
+  display: inline-block;
+  height: 48px;
+  margin: auto;
+  width: 48px;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }

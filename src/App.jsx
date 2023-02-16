@@ -14,11 +14,14 @@ function App() {
   const [city, setCity] = useState('');
   const units = 'metric';
   const [weather, setWeather] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const fetchWeather = async () => {
+    setLoading(true);
     const data = await getFormattedWeatherData(city, units);
     const { formatedWeather } = data;
     setWeather(formatedWeather);
+    setLoading(false);
   };
   useEffect(() => {
     if (city !== '') fetchWeather();
@@ -27,6 +30,12 @@ function App() {
   return (
     <main className={cn('main')}>
       <SearchBar setCity={setCity} />
+
+      {loading && (
+        <div className={cn('spinner__container')}>
+          <span className={cn('spinner__animation')}></span>
+        </div>
+      )}
       {weather && (
         <>
           <DateAndTemperature dateAndTemp={weather.dateAndTemp} />
