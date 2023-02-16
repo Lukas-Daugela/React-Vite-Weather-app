@@ -62,6 +62,7 @@
   }
 
   &__city {
+    text-transform: capitalize;
     @include body-styles('extraLarge');
   }
 

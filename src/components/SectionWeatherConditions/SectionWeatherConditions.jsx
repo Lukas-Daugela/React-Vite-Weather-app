@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import React from 'react';
 
 import {
@@ -14,25 +14,31 @@ import styles from './SectionWeatherConditions.module.scss';
 
 const cn = classNames.bind(styles);
 
-export default function SectionWeatherConditions() {
+export default function SectionWeatherConditions({ weatherConditions }) {
+  const { feelsLike, humidity, wind, sunrise, sunset } = weatherConditions;
   return (
     <div className={cn('conditions')}>
       <div className={cn('condition__wrapper')}>
-        <WeatherCondition className="separate" weatherData="27°C" name={'Feels like'}>
+        <WeatherCondition
+          className="separate"
+          weatherData={feelsLike}
+          unit={'°C'}
+          name={'Feels like'}
+        >
           <ThermometerIcon className={cn('weather__illustration')} />
         </WeatherCondition>
-        <WeatherCondition className="separate" weatherData="54%" name={'Hum'}>
+        <WeatherCondition className="separate" weatherData={`${humidity}%`} name={'Hum'}>
           <HumidityIcon className={cn('weather__illustration')} />
         </WeatherCondition>
-        <WeatherCondition weatherData="10km/h" name={'Wind'}>
+        <WeatherCondition weatherData={wind} unit="km/h" name={'Wind'}>
           <WindIcon className={cn('weather__illustration')} />
         </WeatherCondition>
       </div>
       <div className={cn('day-night-cycles')}>
-        <WeatherCondition weatherData="4.45am" name={'Sunrise'}>
+        <WeatherCondition weatherData={`${sunrise}am`} name={'Sunrise'}>
           <SunriseIcon className={cn('weather__illustration')} />
         </WeatherCondition>
-        <WeatherCondition weatherData="8.50pm" name={'Sunset'}>
+        <WeatherCondition weatherData={`${sunset}pm`} name={'Sunset'}>
           <SunsetIcon className={cn('weather__illustration')} />
         </WeatherCondition>
       </div>
@@ -40,4 +46,6 @@ export default function SectionWeatherConditions() {
   );
 }
 
-// SectionWeatherConditions.propTypes = {};
+SectionWeatherConditions.propTypes = {
+  weatherConditions: PropTypes.object,
+};
