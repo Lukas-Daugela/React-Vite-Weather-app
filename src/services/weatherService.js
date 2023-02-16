@@ -14,29 +14,69 @@ const getWeatherData = (location, units) => {
 };
 
 const formatForecastWeather = (data) => {
-  let { days } = data;
-  console.log(days);
+  const { days, currentConditions, address, resolvedAddress } = data;
+  const { datetimeEpoch, temp, feelslike, humidity, windspeed, sunrise, sunset } =
+    currentConditions;
+
+  const country = getCountry(resolvedAddress);
+  const cityAndCountry = address + ', ' + country;
+
   const weeklyForecast = days.slice(1, 5).map((day) => {
     return {
-      title: formatToLocalTime(day.datetimeEpoch),
+      title: formatWeekday(day.datetimeEpoch),
       temp: Math.round(day.temp),
       icon: day.icon,
     };
   });
-  return weeklyForecast;
+
+  const dateAndTemp = {
+    temp: Math.round(temp),
+    cityAndCountry: cityAndCountry,
+    date: formatLocatDate(datetimeEpoch),
+  };
+
+  const weatherConditions = {
+    feelsLike: Math.round(feelslike),
+    hum: humidity,
+    wind: windspeed,
+    sunrise: sunrise.slice(0, 5),
+    sunset: sunset.slice(0, 5),
+  };
+
+  return {
+    weeklyWeather: weeklyForecast,
+    dateAndTemp: dateAndTemp,
+    weatherConditions: weatherConditions,
+  };
 };
 
 const getFormattedWeatherData = async (location, units) => {
-  const weeklyWeather = await getWeatherData(location, units).then(formatForecastWeather);
+  const formatedWeather = await getWeatherData(location, units).then(
+    formatForecastWeather,
+  );
 
-  return { weeklyWeather };
+  return { formatedWeather };
 };
 
-const formatToLocalTime = (timeInSeconds) => {
+const formatWeekday = (timeInSeconds) => {
   const options = { weekday: 'short' };
 
   const weekday = new Date(timeInSeconds * 1000).toLocaleDateString(undefined, options);
   return weekday;
+};
+
+const formatLocatDate = (timeInSeconds) => {
+  const options = { weekday: 'long', day: 'numeric', month: 'short' };
+
+  const localDate = new Date(timeInSeconds * 1000).toLocaleDateString(undefined, options);
+  return localDate;
+};
+
+const getCountry = (resolvedAddress) => {
+  const addressArray = resolvedAddress.split(', ');
+  const country = addressArray.pop();
+
+  return country;
 };
 
 export default getFormattedWeatherData;

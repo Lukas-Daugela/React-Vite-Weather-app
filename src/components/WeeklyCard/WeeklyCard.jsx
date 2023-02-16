@@ -2,7 +2,6 @@ import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-// import { iconUrlFromCode } from '../../services/weatherService';
 import styles from './WeeklyCard.module.scss';
 
 const cn = classNames.bind(styles);
