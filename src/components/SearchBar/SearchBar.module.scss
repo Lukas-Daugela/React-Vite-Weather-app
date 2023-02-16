@@ -1,0 +1,53 @@
+@import '../../sass/mixins/index';
+
+.search-bar {
+  align-items: center;
+  background: var(--color-white-300);
+  border: 1px solid var(--color-white-250);
+  border-radius: 11px;
+  display: flex;
+  margin: 0 auto;
+  max-width: 40rem;
+  min-width: 26.6rem;
+
+  @include media-query('md') {
+    max-width: 51.2rem;
+    padding-right: 1rem;
+  }
+}
+
+.input {
+  background: transparent;
+  border: unset;
+  padding: 1rem 1.5rem 1.1rem;
+  width: 100%;
+
+  @include body-styles('large');
+
+  &:focus {
+    outline: none;
+  }
+
+  &::placeholder {
+    color: #d7d6d6;
+  }
+
+  @include media-query('md') {
+    padding: 1.7rem 1.5rem 1.8rem;
+  }
+}
+
+.button {
+  @include flex-center;
+
+  background: var(--color-fading-white);
+  border: unset;
+  border-radius: 11px;
+  height: 4.5rem;
+  width: 4.5rem;
+  @include media-query('md') {
+    border-radius: 20px;
+    height: 5.8rem;
+    width: 5.9rem;
+  }
+}
