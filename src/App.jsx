@@ -13,14 +13,13 @@ import getFormattedWeatherData from './services/weatherService';
 const cn = classNames.bind(styles);
 
 function App() {
-  const query = { q: 'Kaunas' };
+  const query = 'New York';
   const units = 'metric';
   const [weather, setWeather] = useState(null);
 
   useEffect(() => {
     const fetchWeather = async () => {
-      const data = await getFormattedWeatherData({ ...query, units });
-
+      const data = await getFormattedWeatherData(query, units);
       setWeather(data);
     };
 
@@ -37,7 +36,7 @@ function App() {
       </div>
       <DateAndTemperature />
       <SectionWeatherConditions />
-      {weather && <SectionWeeklyCards weeklyData={weather.forecastData} />}
+      {weather && <SectionWeeklyCards weeklyData={weather.weeklyWeather} />}
     </main>
   );
 }
