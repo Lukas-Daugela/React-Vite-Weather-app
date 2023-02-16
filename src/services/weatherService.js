@@ -9,8 +9,11 @@ const getWeatherData = (location, units) => {
   const api = `&key=${API_KEY}`;
 
   const url = new URL(BASE_URL + location + '?' + unitCode + api);
-
-  return fetch(url).then((res) => res.json());
+  return fetch(url).then((res) => {
+    if (!res.ok) {
+      return '400';
+    } else return res.json();
+  });
 };
 
 const formatForecastWeather = (data) => {
@@ -51,9 +54,11 @@ const formatForecastWeather = (data) => {
 };
 
 const getFormattedWeatherData = async (location, units) => {
-  const formatedWeather = await getWeatherData(location, units).then(
-    formatForecastWeather,
-  );
+  const formatedWeather = await getWeatherData(location, units).then((data) => {
+    if (data !== '400') {
+      return formatForecastWeather(data);
+    }
+  });
 
   return { formatedWeather };
 };

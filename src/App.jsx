@@ -15,13 +15,13 @@ function App() {
   const units = 'metric';
   const [weather, setWeather] = useState(null);
 
+  const fetchWeather = async () => {
+    const data = await getFormattedWeatherData(city, units);
+    const { formatedWeather } = data;
+    setWeather(formatedWeather);
+  };
   useEffect(() => {
-    const fetchWeather = async () => {
-      const data = await getFormattedWeatherData(city, units);
-      const { formatedWeather } = data;
-      setWeather(formatedWeather);
-    };
-    fetchWeather();
+    if (city !== '') fetchWeather();
   }, [city]);
 
   return (
@@ -33,6 +33,11 @@ function App() {
           <SectionWeatherConditions weatherConditions={weather.weatherConditions} />
           <SectionWeeklyCards weeklyData={weather.weeklyWeather} />
         </>
+      )}
+      {weather === undefined ? (
+        <p className={cn('error__text')}>Please enter a valid city</p>
+      ) : (
+        <></>
       )}
     </main>
   );
