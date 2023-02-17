@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 import styles from './App.module.scss';
 import DateAndTemperature from './components/DateAndTemperature/DateAndTemperature';
+import { Spinner } from './components/Loaders';
 import SearchBar from './components/SearchBar';
 import SectionWeatherConditions from './components/SectionWeatherConditions/SectionWeatherConditions';
 import SectionWeeklyCards from './components/SectionWeeklyCards';
@@ -31,11 +32,7 @@ function App() {
     <main className={cn('main')}>
       <SearchBar setCity={setCity} />
 
-      {loading && (
-        <div className={cn('spinner__container')}>
-          <span className={cn('spinner__animation')}></span>
-        </div>
-      )}
+      {loading && <Spinner />}
       {weather && (
         <>
           <DateAndTemperature dateAndTemp={weather.dateAndTemp} />
