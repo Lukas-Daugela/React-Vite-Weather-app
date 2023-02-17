@@ -15,7 +15,7 @@ export default function SectionWeeklyCards({ weeklyData }) {
           key={index}
           title={singleDay.title}
           temp={singleDay.temp}
-          icon={singleDay.icon}
+          iconTitle={singleDay.icon}
         />
       ))}
     </div>

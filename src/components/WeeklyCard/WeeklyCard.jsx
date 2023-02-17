@@ -2,15 +2,18 @@ import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import iconLinks from './iconLinks.json';
 import styles from './WeeklyCard.module.scss';
 
 const cn = classNames.bind(styles);
 
-export default function WeeklyCard({ title, temp, icon }) {
+export default function WeeklyCard({ title, temp, iconTitle }) {
+  const iconLink = iconLinks.find((icon) => icon.title === iconTitle);
   return (
     <div className={cn('card')}>
       <p className={cn('card__info')}>{title}</p>
-      <img src={icon} alt="" />
+
+      <img className={cn('card__image')} src={iconLink.url} alt="This is an image" />
       <p className={cn('card__info')}>{temp}</p>
     </div>
   );
@@ -19,5 +22,5 @@ export default function WeeklyCard({ title, temp, icon }) {
 WeeklyCard.propTypes = {
   title: PropTypes.string,
   temp: PropTypes.number,
-  icon: PropTypes.node,
+  iconTitle: PropTypes.node,
 };
