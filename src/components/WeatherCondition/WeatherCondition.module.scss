@@ -13,7 +13,7 @@
   &__wrapper {
     align-items: center;
     display: grid;
-    grid-template-columns: 15% 55% 30%;
+    grid-template-columns: 15% 50% 35%;
 
     @include media-query('md') {
       display: flex;

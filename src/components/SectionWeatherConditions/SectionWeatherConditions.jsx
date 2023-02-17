@@ -14,31 +14,33 @@ import styles from './SectionWeatherConditions.module.scss';
 
 const cn = classNames.bind(styles);
 
-export default function SectionWeatherConditions({ weatherConditions }) {
+export default function SectionWeatherConditions({ weatherConditions, unit }) {
   const { feelsLike, humidity, wind, sunrise, sunset } = weatherConditions;
+
   return (
     <div className={cn('conditions')}>
       <div className={cn('condition__wrapper')}>
         <WeatherCondition
           className="separate"
           weatherData={feelsLike}
-          unit={'°C'}
+          unit={unit}
+          degree
           name={'Feels like'}
         >
           <ThermometerIcon className={cn('weather__illustration')} />
         </WeatherCondition>
-        <WeatherCondition className="separate" weatherData={`${humidity}%`} name={'Hum'}>
+        <WeatherCondition className="separate" weatherData={`${humidity} %`} name={'Hum'}>
           <HumidityIcon className={cn('weather__illustration')} />
         </WeatherCondition>
-        <WeatherCondition weatherData={wind} unit="km/h" name={'Wind'}>
+        <WeatherCondition weatherData={wind} wind unit={unit} name={'Wind'}>
           <WindIcon className={cn('weather__illustration')} />
         </WeatherCondition>
       </div>
       <div className={cn('day-night-cycles')}>
-        <WeatherCondition weatherData={`${sunrise}am`} name={'Sunrise'}>
+        <WeatherCondition weatherData={`${sunrise} am`} name={'Sunrise'}>
           <SunriseIcon className={cn('weather__illustration')} />
         </WeatherCondition>
-        <WeatherCondition weatherData={`${sunset}pm`} name={'Sunset'}>
+        <WeatherCondition weatherData={`${sunset} pm`} name={'Sunset'}>
           <SunsetIcon className={cn('weather__illustration')} />
         </WeatherCondition>
       </div>
@@ -48,4 +50,5 @@ export default function SectionWeatherConditions({ weatherConditions }) {
 
 SectionWeatherConditions.propTypes = {
   weatherConditions: PropTypes.object,
+  unit: PropTypes.string,
 };

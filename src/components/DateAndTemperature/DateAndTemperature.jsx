@@ -8,8 +8,9 @@ import styles from './DateAndTemperature.module.scss';
 
 const cn = classNames.bind(styles);
 
-export default function DateAndTemperature({ dateAndTemp }) {
+export default function DateAndTemperature({ dateAndTemp, unit }) {
   const { iconTitle, temp, cityAndCountry, date } = dateAndTemp;
+  const degree = unit === 'metric' ? '°C' : '°F';
 
   const iconLink = iconLinks.find((icon) => icon.title === iconTitle);
 
@@ -19,7 +20,7 @@ export default function DateAndTemperature({ dateAndTemp }) {
         <img className={cn('current-weather__image')} src={iconLink.url} alt="" />
         <p className={cn('current-weather__temperature')}>
           {temp}
-          <span className={cn('current-weather__degree')}>°C</span>
+          <span className={cn('current-weather__degree')}>{degree}</span>
         </p>
       </div>
       <div className={cn('location-time')}>
@@ -37,4 +38,5 @@ export default function DateAndTemperature({ dateAndTemp }) {
 
 DateAndTemperature.propTypes = {
   dateAndTemp: PropTypes.object,
+  unit: PropTypes.string,
 };

@@ -7,7 +7,7 @@ import styles from './SectionWeeklyCards.module.scss';
 
 const cn = classNames.bind(styles);
 
-export default function SectionWeeklyCards({ weeklyData }) {
+export default function SectionWeeklyCards({ weeklyData, unit }) {
   return (
     <div className={cn('weekly-cards')}>
       {weeklyData.map((singleDay, index) => (
@@ -16,6 +16,7 @@ export default function SectionWeeklyCards({ weeklyData }) {
           title={singleDay.title}
           temp={singleDay.temp}
           iconTitle={singleDay.icon}
+          unit={unit}
         />
       ))}
     </div>
@@ -24,4 +25,5 @@ export default function SectionWeeklyCards({ weeklyData }) {
 
 SectionWeeklyCards.propTypes = {
   weeklyData: PropTypes.array,
+  unit: PropTypes.string,
 };

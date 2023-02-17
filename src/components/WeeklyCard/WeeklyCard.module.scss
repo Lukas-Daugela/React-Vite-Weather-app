@@ -1,18 +1,17 @@
 @import '../../sass/mixins/index';
 
 .card {
-  @include flex-center;
-
+  align-items: center;
   background: var(--color-white-300);
   border: 1px solid var(--color-white-250);
   border-radius: 11px;
-  gap: 2rem;
+  display: flex;
+  justify-content: space-around;
   min-height: 8rem;
   min-width: 25rem;
 
   @include media-query('sm') {
     flex-direction: column;
-    gap: unset;
     min-width: unset;
     padding: 1.8rem 0;
   }
