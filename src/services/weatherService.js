@@ -41,8 +41,8 @@ const formatForecastWeather = (data) => {
 
   const weatherConditions = {
     feelsLike: Math.round(feelslike),
-    humidity: humidity,
-    wind: windspeed,
+    humidity: Math.round(humidity),
+    wind: Math.round(windspeed),
     sunrise: sunrise.slice(0, 5),
     sunset: sunset.slice(0, 5),
   };
