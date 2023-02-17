@@ -21,6 +21,17 @@
     text-align: center;
   }
 
+  &__image {
+    margin-right: auto;
+    max-width: 15rem;
+    padding: 1rem 0;
+
+    @include media-query('md') {
+      margin: auto;
+      max-width: unset;
+    }
+  }
+
   &__temperature {
     display: flex;
     font-size: 9.6rem;

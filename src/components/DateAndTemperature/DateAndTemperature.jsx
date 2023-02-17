@@ -2,18 +2,21 @@ import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import { CloudyNight, LocationIcon } from '../../assets/svg';
+import { LocationIcon } from '../../assets/svg';
+import iconLinks from '../../context/iconLinks.json';
 import styles from './DateAndTemperature.module.scss';
 
 const cn = classNames.bind(styles);
 
 export default function DateAndTemperature({ dateAndTemp }) {
-  const { temp, cityAndCountry, date } = dateAndTemp;
+  const { iconTitle, temp, cityAndCountry, date } = dateAndTemp;
+
+  const iconLink = iconLinks.find((icon) => icon.title === iconTitle);
 
   return (
     <div className={cn('date-and-temperature')}>
       <div className={cn('current-weather')}>
-        <CloudyNight />
+        <img className={cn('current-weather__image')} src={iconLink.url} alt="" />
         <p className={cn('current-weather__temperature')}>
           {temp}
           <span className={cn('current-weather__degree')}>°C</span>

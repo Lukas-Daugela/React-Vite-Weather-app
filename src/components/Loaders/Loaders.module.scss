@@ -8,6 +8,11 @@
   position: absolute;
   top: 0;
   width: 100vw;
+
+  @include media-query('md') {
+    left: unset;
+    top: unset;
+  }
 }
 
 .spinner__animation {

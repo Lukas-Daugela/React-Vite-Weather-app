@@ -18,7 +18,7 @@ const getWeatherData = (location, units) => {
 
 const formatForecastWeather = (data) => {
   const { days, currentConditions, address, resolvedAddress } = data;
-  const { datetimeEpoch, temp, feelslike, humidity, windspeed, sunrise, sunset } =
+  const { datetimeEpoch, temp, icon, feelslike, humidity, windspeed, sunrise, sunset } =
     currentConditions;
 
   const country = getCountry(resolvedAddress);
@@ -33,6 +33,7 @@ const formatForecastWeather = (data) => {
   });
 
   const dateAndTemp = {
+    iconTitle: icon,
     temp: Math.round(temp),
     cityAndCountry: cityAndCountry,
     date: formatLocatDate(datetimeEpoch),
