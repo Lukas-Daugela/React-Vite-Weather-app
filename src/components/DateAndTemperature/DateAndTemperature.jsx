@@ -9,7 +9,7 @@ import styles from './DateAndTemperature.module.scss';
 const cn = classNames.bind(styles);
 
 export default function DateAndTemperature({ dateAndTemp, unit }) {
-  const { iconTitle, temp, cityAndCountry, date } = dateAndTemp;
+  const { iconTitle, temp, country, city, date } = dateAndTemp;
   const degree = unit === 'metric' ? '°C' : '°F';
 
   const iconLink = iconLinks.find((icon) => icon.title === iconTitle);
@@ -26,7 +26,7 @@ export default function DateAndTemperature({ dateAndTemp, unit }) {
       <div className={cn('location-time')}>
         <div className={cn('location-time__location')}>
           <LocationIcon />
-          <p className={cn('location-time__city')}>{cityAndCountry}</p>
+          <p className={cn('location-time__city')}>{`${city}, ${country}`}</p>
         </div>
         <div className={cn('location-time__time')}>
           <p className={cn('location-time__date')}>{date}</p>

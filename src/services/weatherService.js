@@ -22,7 +22,6 @@ const formatForecastWeather = (data) => {
     currentConditions;
 
   const country = getCountry(resolvedAddress);
-  const cityAndCountry = address + ', ' + country;
 
   const weeklyForecast = days.slice(1, 5).map((day) => {
     return {
@@ -35,7 +34,8 @@ const formatForecastWeather = (data) => {
   const dateAndTemp = {
     iconTitle: icon,
     temp: Math.round(temp),
-    cityAndCountry: cityAndCountry,
+    city: address,
+    country: country,
     date: formatLocatDate(datetimeEpoch),
   };
 
