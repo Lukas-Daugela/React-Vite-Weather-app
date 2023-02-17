@@ -1,17 +1,16 @@
 @import './sass/mixins/index';
 
 .main {
-  padding: 5rem 10% 0;
-  position: relative;
+  padding: 0 10%;
 
+  @include media-query('sm') {
+    padding: unset;
+  }
   @include media-query('md') {
     @include flex-center;
 
     flex-direction: column;
-    height: 100vh;
-    margin: auto;
     max-width: 75rem;
-    padding: unset;
   }
 }
 

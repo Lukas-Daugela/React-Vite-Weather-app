@@ -4,11 +4,12 @@ import React from 'react';
 
 import { LocationIcon } from '../../assets/svg';
 import iconLinks from '../../context/iconLinks.json';
+import DegreeButtons from '../DegreeButton';
 import styles from './DateAndTemperature.module.scss';
 
 const cn = classNames.bind(styles);
 
-export default function DateAndTemperature({ dateAndTemp, unit }) {
+export default function DateAndTemperature({ dateAndTemp, unit, setUnit }) {
   const { iconTitle, temp, country, city, date } = dateAndTemp;
   const degree = unit === 'metric' ? '°C' : '°F';
 
@@ -16,6 +17,7 @@ export default function DateAndTemperature({ dateAndTemp, unit }) {
 
   return (
     <div className={cn('date-and-temperature')}>
+      <DegreeButtons setUnits={setUnit} unit={unit} />
       <div className={cn('current-weather')}>
         <img className={cn('current-weather__image')} src={iconLink.url} alt="" />
         <p className={cn('current-weather__temperature')}>
@@ -39,4 +41,5 @@ export default function DateAndTemperature({ dateAndTemp, unit }) {
 DateAndTemperature.propTypes = {
   dateAndTemp: PropTypes.object,
   unit: PropTypes.string,
+  setUnit: PropTypes.func,
 };

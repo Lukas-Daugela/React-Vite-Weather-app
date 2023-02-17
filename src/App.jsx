@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 
 import styles from './App.module.scss';
 import DateAndTemperature from './components/DateAndTemperature/DateAndTemperature';
-import DegreeButtons from './components/DegreeButton/DegreeButtons';
 import { Spinner } from './components/Loaders';
 import SearchBar from './components/SearchBar';
 import SectionWeatherConditions from './components/SectionWeatherConditions/SectionWeatherConditions';
@@ -36,8 +35,11 @@ function App() {
       {loading && <Spinner />}
       {weather && (
         <>
-          <DegreeButtons setUnits={setUnit} unit={unit} />
-          <DateAndTemperature dateAndTemp={weather.dateAndTemp} unit={unit} />
+          <DateAndTemperature
+            dateAndTemp={weather.dateAndTemp}
+            unit={unit}
+            setUnit={setUnit}
+          />
           <SectionWeatherConditions
             weatherConditions={weather.weatherConditions}
             unit={unit}

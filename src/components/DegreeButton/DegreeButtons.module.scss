@@ -2,12 +2,12 @@
 
 .degree-buttons {
   position: absolute;
-  right: 4rem;
-  top: 15rem;
+  right: 0;
+  top: 4rem;
 
   @include media-query('md') {
-    right: 4rem;
-    top: 21rem;
+    right: -4rem;
+    top: 6rem;
   }
 
   &__wrapper {

@@ -1,3 +1,5 @@
+@import '../mixins/index.scss';
+
 *,
 *::before,
 *::after {
@@ -15,9 +17,9 @@ body {
   font-family: var(--font-family-primary), sans-serif;
   line-height: var(--line-height-base);
   min-height: 100vh;
-  margin: 0;
   padding: 0;
   position: relative;
+  @include flex-center;
 }
 
 img {
