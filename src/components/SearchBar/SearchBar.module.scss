@@ -8,7 +8,6 @@
   display: flex;
   margin: 0 auto;
   max-width: 40rem;
-  min-width: 26.6rem;
 
   @include media-query('md') {
     max-width: 51.2rem;

@@ -8,11 +8,9 @@
   display: flex;
   justify-content: space-around;
   min-height: 8rem;
-  min-width: 25rem;
 
   @include media-query('sm') {
     flex-direction: column;
-    min-width: unset;
     padding: 1.8rem 0;
   }
 
