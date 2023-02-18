@@ -1,90 +1,90 @@
 [
   {
     "title": "clear-day",
-    "url": "src/assets/svg/weatherIcons/ClearDay.svg"
+    "url": "/assets/weatherIcons/ClearDay.svg"
   },
   {
     "title": "clear-night",
-    "url": "src/assets/svg/weatherIcons/ClearNight.svg"
+    "url": "/assets/weatherIcons/ClearNight.svg"
   },
   {
     "title": "cloudy",
-    "url": "src/assets/svg/weatherIcons/Cloudy.svg"
+    "url": "/assets/weatherIcons/Cloudy.svg"
   },
   {
     "title": "fog",
-    "url": "src/assets/svg/weatherIcons/Fog.svg"
+    "url": "/assets/weatherIcons/Fog.svg"
   },
   {
     "title": "hail",
-    "url": "src/assets/svg/weatherIcons/Hail.svg"
+    "url": "/assets/weatherIcons/Hail.svg"
   },
   {
     "title": "partly-cloudy-day",
-    "url": "src/assets/svg/weatherIcons/PartlyCloudyDay.svg"
+    "url": "/assets/weatherIcons/PartlyCloudyDay.svg"
   },
   {
     "title": "partly-cloudy-night",
-    "url": "src/assets/svg/weatherIcons/PartlyCloudyNight.svg"
+    "url": "/assets/weatherIcons/PartlyCloudyNight.svg"
   },
   {
     "title": "rain",
-    "url": "src/assets/svg/weatherIcons/Rain.svg"
+    "url": "/assets/weatherIcons/Rain.svg"
   },
   {
     "title": "rain-snow",
-    "url": "src/assets/svg/weatherIcons/RainSnow.svg"
+    "url": "/assets/weatherIcons/RainSnow.svg"
   },
   {
     "title": "rain-snow-showers-day",
-    "url": "src/assets/svg/weatherIcons/RainSnowShowerDay.svg"
+    "url": "/assets/weatherIcons/RainSnowShowerDay.svg"
   },
   {
     "title": "rain-snow-showers-night",
-    "url": "src/assets/svg/weatherIcons/RainSnowShowerNight.svg"
+    "url": "/assets/weatherIcons/RainSnowShowerNight.svg"
   },
   {
     "title": "showers-day",
-    "url": "src/assets/svg/weatherIcons/ShowerDay.svg"
+    "url": "/assets/weatherIcons/ShowerDay.svg"
   },
   {
     "title": "showers-night",
-    "url": "src/assets/svg/weatherIcons/ShowerNight.svg"
+    "url": "/assets/weatherIcons/ShowerNight.svg"
   },
   {
     "title": "sleet",
-    "url": "src/assets/svg/weatherIcons/RainSnow.svg"
+    "url": "/assets/weatherIcons/RainSnow.svg"
   },
   {
     "title": "snow",
-    "url": "src/assets/svg/weatherIcons/Snow.svg"
+    "url": "/assets/weatherIcons/Snow.svg"
   },
   {
     "title": "snow-showers-day",
-    "url": "src/assets/svg/weatherIcons/SnowShowerDay.svg"
+    "url": "/assets/weatherIcons/SnowShowerDay.svg"
   },
   {
     "title": "snow-showers-night",
-    "url": "src/assets/svg/weatherIcons/SnowShowerNight.svg"
+    "url": "/assets/weatherIcons/SnowShowerNight.svg"
   },
   {
     "title": "thunder",
-    "url": "src/assets/svg/weatherIcons/Thunder.svg"
+    "url": "/assets/weatherIcons/Thunder.svg"
   },
   {
     "title": "thunder-rain",
-    "url": "src/assets/svg/weatherIcons/ThunderRain.svg"
+    "url": "/assets/weatherIcons/ThunderRain.svg"
   },
   {
     "title": "thunder-showers-day",
-    "url": "src/assets/svg/weatherIcons/ThunderShowerDay.svg"
+    "url": "/assets/weatherIcons/ThunderShowerDay.svg"
   },
   {
     "title": "thunder-showers-night",
-    "url": "src/assets/svg/weatherIcons/ThunderShowerNight.svg"
+    "url": "/assets/weatherIcons/ThunderShowerNight.svg"
   },
   {
     "title": "wind",
-    "url": "src/assets/svg/weatherIcons/Wind.svg"
+    "url": "/assets/weatherIcons/Wind.svg"
   }
 ]
