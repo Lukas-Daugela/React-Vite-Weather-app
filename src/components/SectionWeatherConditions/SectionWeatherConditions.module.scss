@@ -1,0 +1,49 @@
+@import '../../sass/mixins/index';
+
+.conditions {
+  @include media-query('sm') {
+    display: flex;
+    justify-content: space-around;
+  }
+  @include media-query('md') {
+    display: block;
+  }
+}
+
+.condition__wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0;
+
+  @include media-query('md') {
+    flex-direction: row;
+    gap: 3rem;
+    padding: 4rem 0;
+  }
+}
+
+.weather__illustration {
+  display: block;
+  height: 1.8rem;
+  width: 2rem;
+  @include media-query('md') {
+    height: 2.2rem;
+    width: 2.2rem;
+  }
+  @include media-query('lg') {
+    width: 3rem;
+  }
+}
+
+.day-night-cycles {
+  @include media-query('sm') {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  @include media-query('md') {
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+}

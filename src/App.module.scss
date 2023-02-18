@@ -1,0 +1,21 @@
+@import './sass/mixins/index';
+
+.main {
+  padding: 0 10%;
+
+  @include media-query('sm') {
+    padding: unset;
+  }
+  @include media-query('md') {
+    @include flex-center;
+
+    flex-direction: column;
+    max-width: 75rem;
+  }
+}
+
+.error__text {
+  margin-top: 1.5rem;
+  text-align: center;
+  @include body-styles('medium');
+}

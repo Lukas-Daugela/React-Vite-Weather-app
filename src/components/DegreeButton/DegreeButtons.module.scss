@@ -1,0 +1,77 @@
+@import '../../sass/mixins/index';
+
+.degree-buttons {
+  position: absolute;
+  right: 0;
+  top: 4rem;
+
+  @include media-query('md') {
+    right: -4rem;
+    top: 6rem;
+  }
+
+  &__wrapper {
+    background: var(--color-white-200);
+    border-radius: 11px;
+    display: flex;
+    flex-direction: column;
+    height: 9rem;
+    position: relative;
+    width: 4.5rem;
+
+    @include media-query('sm') {
+      border-radius: 100px;
+      flex-direction: row;
+      height: 4rem;
+      width: 12rem;
+    }
+  }
+
+  &__toggle {
+    background: transparent;
+    border: unset;
+    border-radius: inherit;
+    font-family: var(--font-family-primary);
+    font-size: 2.2rem;
+    font-weight: 400;
+    height: 4.5rem;
+    width: 4.5rem;
+
+    @include media-query('sm') {
+      height: 4rem;
+      width: 6rem;
+    }
+  }
+
+  &__background {
+    background: var(--color-white-250);
+    border: inherit;
+    border-radius: inherit;
+    height: 4.5rem;
+    position: absolute;
+    width: 4.5rem;
+
+    @include media-query('sm') {
+      height: 4rem;
+      width: 6rem;
+    }
+
+    &--toggle-left {
+      top: 0;
+      transition: top 2s ease-in, left 2s ease-in;
+
+      @include media-query('sm') {
+        left: 0;
+      }
+    }
+
+    &--toggle-right {
+      bottom: 0;
+      transition: bottom 2s ease-in, right 2s ease-in;
+
+      @include media-query('sm') {
+        right: 0;
+      }
+    }
+  }
+}

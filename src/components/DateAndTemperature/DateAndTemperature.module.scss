@@ -1,0 +1,90 @@
+@import '../../sass/mixins/index';
+
+.date-and-temperature {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  @include media-query('sm') {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  @include media-query('md') {
+    flex-direction: row;
+    justify-content: unset;
+  }
+}
+
+.current-weather {
+  text-align: start;
+
+  @include media-query('md') {
+    text-align: center;
+  }
+
+  &__image {
+    margin-right: auto;
+    max-width: 15rem;
+    padding: 1rem 0;
+
+    @include media-query('md') {
+      margin: auto;
+      max-width: unset;
+    }
+  }
+
+  &__temperature {
+    display: flex;
+    font-size: 9.6rem;
+    font-weight: 100;
+    line-height: 1;
+    margin: 0;
+
+    @include media-query('md') {
+      font-size: 16.4rem;
+    }
+  }
+
+  &__degree {
+    font-size: 3.2rem;
+    font-weight: 300;
+    margin: 0 0 auto;
+  }
+}
+
+.location-time {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+
+  @include media-query('md') {
+    margin-left: 4.7rem;
+  }
+
+  &__city,
+  &__date,
+  &__hours {
+    margin: 0;
+  }
+
+  &__location {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__city {
+    text-transform: capitalize;
+    @include body-styles('extraLarge');
+  }
+
+  &__time {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+    @include body-styles('medium');
+    @include media-query('sm') {
+      padding-bottom: 1.5rem;
+    }
+  }
+}

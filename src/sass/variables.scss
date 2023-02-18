@@ -1,5 +1,20 @@
 :root {
   /* Colors */
+  --color-white: #fff;
+  --color-white-200: rgba(255, 255, 255, 0.161);
+  --color-white-250: hsla(0, 0%, 100%, 0.18);
+  --color-white-300: rgba(255, 255, 255, 0.2);
+
+  --color-purple-to-blue: linear-gradient(40deg, #48355b 0%, #91bef3 100%);
+  --color-fading-white: linear-gradient(
+    116.79deg,
+    rgba(255, 255, 255, 0.48) 0%,
+    rgba(255, 255, 255, 0.12) 99.45%
+  );
 
   /* Base */
+  --font-family-primary: 'Inter';
+  --font-family-secondary: 'Overpass';
+  --line-height-base: 1.5;
+  --color-base: var(--color-white);
 }

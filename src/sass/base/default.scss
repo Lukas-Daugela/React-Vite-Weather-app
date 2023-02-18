@@ -1,3 +1,5 @@
+@import '../mixins/index.scss';
+
 *,
 *::before,
 *::after {
@@ -10,8 +12,14 @@ html {
 }
 
 body {
-  margin: 0;
+  color: var(--color-base);
+  background: var(--color-purple-to-blue);
+  font-family: var(--font-family-primary), sans-serif;
+  line-height: var(--line-height-base);
+  min-height: 100vh;
   padding: 0;
+  position: relative;
+  @include flex-center;
 }
 
 img {
